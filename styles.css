@@ -390,6 +390,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .hero__visual-img {
@@ -400,9 +401,110 @@ img {
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
 }
 
-@keyframes float {
+/* Thought Bubble */
+.thought-bubble {
+    position: absolute;
+    top: 14%;
+    right: 60%;
+    z-index: 3;
+    pointer-events: none;
+    transform: scale(0.65);
+}
+
+.thought-bubble__dot {
+    border-radius: 50%;
+    background: var(--white);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    position: absolute;
+}
+
+.thought-bubble__dot--1 {
+    width: 14px;
+    height: 14px;
+    bottom: 0;
+    left: 20px;
+    animation: bubble-float 3s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+.thought-bubble__dot--2 {
+    width: 22px;
+    height: 22px;
+    bottom: 24px;
+    left: 8px;
+    animation: bubble-float 3s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+.thought-bubble__dot--3 {
+    width: 32px;
+    height: 32px;
+    bottom: 56px;
+    left: -4px;
+    animation: bubble-float 3s ease-in-out infinite;
+    animation-delay: 0.6s;
+}
+
+.thought-bubble__cloud {
+    position: absolute;
+    bottom: 100px;
+    left: -50px;
+    width: 90px;
+    height: 70px;
+    background: var(--white);
+    border: none;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    animation: bubble-float 3s ease-in-out infinite;
+    animation-delay: 0.9s;
+}
+
+.thought-bubble__cloud::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    background: var(--white);
+    border: none;
+    border-radius: 50%;
+    top: -12px;
+    left: -10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: -1;
+}
+
+.thought-bubble__cloud::after {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 32px;
+    background: var(--white);
+    border: none;
+    border-radius: 50%;
+    top: -15px;
+    right: -5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: -1;
+}
+
+.thought-bubble__cloud span {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes bubble-float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-16px); }
+    50% { transform: translateY(-8px); }
 }
 
 /* ════════════════════════════════════════
