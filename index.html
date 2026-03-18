@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinviAPP — Toma el control de tu dinero</title>
+    <meta name="description" content="Conecta tus bancos, ordena tus finanzas automáticamente y deja de perder dinero. FinviAPP te muestra la verdad sobre tu salud financiera.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons (modern icon library) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="#" class="navbar__logo">
+                <img src="imagnes/logografica.png" alt="FinviAPP Logo" class="navbar__logo-img">
+                <span class="navbar__logo-text">FinviAPP</span>
+            </a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="#problema">El Problema</a></li>
+                <li><a href="#mejora-financiero">Mejora Financiera</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#cta-final">Descarga</a></li>
+            </ul>
+            <a href="#cta-final" class="btn btn--primary navbar__cta">Empieza Gratis</a>
+            <button class="navbar__burger" id="navBurger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <header class="hero" id="hero">
+        <div class="hero__bg-blur"></div>
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <p class="hero__tag"> Con FinviAPP personas ya dejaron de perder dinero</p>
+                <h1 class="hero__title">
+                    Si no sabes a dónde se va tu dinero, <span class="highlight">nunca vas a tener más.</span>
+                </h1>
+                <p class="hero__subtitle">
+                    FinviAPP conecta tus bancos, te muestra la verdad sobre tus gastos. <strong>Sin excusas. Sin mentirte.</strong>
+                </p>
+                <div class="hero__actions">
+                    <a href="#cta-final" class="btn btn--primary btn--lg">
+                        Quiero ver mi realidad financiera
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#como-funciona" class="btn btn--ghost btn--lg">
+                        Cómo funciona
+                    </a>
+                </div>
+                <div class="hero__trust">
+                    <div class="hero__trust-avatars">
+                        <div class="avatar" style="background: #5170ff;">B</div>
+                        <div class="avatar" style="background: #1800ad;">M</div>
+                        <div class="avatar" style="background: #5170ff;">A</div>
+                        <div class="avatar" style="background: #1800ad;">K</div>
+                    </div>
+                    <span>Únete a los que ya toman el control de sus finanzas</span>
+                </div>
+            </div>
+            <div class="hero__visual">
+                <img src="imagnes/Imgenesiniciomujer.png" alt="Mujer usando FinviAPP" class="hero__visual-img">
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== PROBLEMA (Pain Points) ========== -->
+    <section class="section section--dark" id="problema">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__tag"> La verdad incómoda</p>
+                <h2 class="section__title">El 78% de las personas <div> </div><span class="highlight typewriter">no saben en qué gastan su dinero.</span></h2>
+                <div class="pain-tags">
+                    <div class="pain-tag" data-animate>
+                        <i data-lucide="eye-off"></i>
+                        <span>Gastos invisibles</span>
+                    </div>
+                    <div class="pain-tag" data-animate>
+                        <i data-lucide="trending-down"></i>
+                        <span>Vivir al límite</span>
+                    </div>
+                    <div class="pain-tag" data-animate>
+                        <i data-lucide="ban"></i>
+                        <span>Cero ahorro</span>
+                    </div>
+                </div>
+            </div>
+            <div class="problema-layout">
+                <div class="steps-vertical">
+                    <div class="step-v" data-animate>
+                        <div class="step-v__number">01</div>
+                        <div class="step-v__content">
+                            <h3>Conecta tus bancos</h3>
+                            <p>Vincula tus cuentas de forma segura. FinviAPP lee tus movimientos automáticamente.</p>
+                        </div>
+                    </div>
+                    <div class="step-v" data-animate>
+                        <div class="step-v__number">02</div>
+                        <div class="step-v__content">
+                            <h3>Mira la verdad</h3>
+                            <p>Tus gastos organizados y categorizados sin filtro. Ves exactamente a dónde va cada peso.</p>
+                        </div>
+                    </div>
+                    <div class="step-v" data-animate>
+                        <div class="step-v__number">03</div>
+                        <div class="step-v__content">
+                            <h3>Mejora cada día</h3>
+                            <p>Alertas y guías personalizadas para gastar menos y ahorrar más.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gráfica de bancos conectados a FinviAPP -->
+                <div class="bank-graph" data-animate>
+                    <svg class="bank-graph__lines" viewBox="0 0 400 400" fill="none">
+                        <defs>
+                            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#5170ff" stop-opacity="0.3" />
+                                <stop offset="100%" stop-color="#1800ad" stop-opacity="0.6" />
+                            </linearGradient>
+                        </defs>
+                        <line x1="80" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        <line x1="320" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        <line x1="30" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        <line x1="370" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        <line x1="100" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        <line x1="300" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                    </svg>
+                    <div class="bank-graph__center">
+                        <img src="imagnes/logografica.png" alt="FinviAPP">
+                    </div>
+                    <div class="bank-graph__node bank-graph__node--1"><img src="imagnes/bancochile.png" alt="Banco de Chile"></div>
+                    <div class="bank-graph__node bank-graph__node--2"><img src="imagnes/bancoestado.png" alt="BancoEstado"></div>
+                    <div class="bank-graph__node bank-graph__node--3"><img src="imagnes/bancoSantander.png" alt="Santander"></div>
+                    <div class="bank-graph__node bank-graph__node--4"><img src="imagnes/bancobci.png" alt="BCI"></div>
+                    <div class="bank-graph__node bank-graph__node--5"><img src="imagnes/bancoScotie.png" alt="Scotiabank"></div>
+                    <div class="bank-graph__node bank-graph__node--6"><img src="imagnes/bancoitauu.png" alt="Itaú"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MEJORA TU ESTADO FINANCIERO ========== -->
+    <section class="section section--light" id="mejora-financiero">
+        <div class="container mejora__inner">
+            <div class="mejora__image" data-animate>
+                <div class="phone-frame">
+                    <div class="phone-frame__notch">
+                        <div class="phone-frame__camera"></div>
+                    </div>
+                    <div class="phone-frame__screen">
+                        <img src="imagnes/capturaFinviapp.png" alt="FinviAPP en tu celular" class="mejora__img">
+                    </div>
+                </div>
+            </div>
+            <div class="mejora__content" data-animate>
+                <p class="section__tag">Tu siguiente paso</p>
+                <h2 class="section__title">Mejora tu <span class="highlight">estado financiero</span></h2>
+
+                <ul class="mejora__list">
+                    <li>
+                        <i data-lucide="check-circle"></i>
+                        <span>Visualiza todos tus gastos en un solo lugar</span>
+                    </li>
+                    <li>
+                        <i data-lucide="check-circle"></i>
+                        <span>Recibe alertas antes de pasarte del presupuesto</span>
+                    </li>
+                    <li>
+                        <i data-lucide="check-circle"></i>
+                        <span>Ahorra sin esfuerzo con metas automáticas</span>
+                    </li>
+                </ul>
+                <a href="#cta-final" class="btn btn--primary btn--lg">
+                    Empieza a mejorar hoy
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIOS ========== -->
+    <section class="section" id="testimonios">
+        <div class="container">
+            <div class="section__header section__header--center">
+                <p class="section__tag">Sin filtro</p>
+                <h2 class="section__title">Lo que dicen los que <span class="highlight">ya despertaron</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-animate>
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p>"Descubrí que gastaba $180.000 al mes en cosas que ni recordaba. Finvi me abrió los ojos."</p>
+                    <div class="testimonial-card__author">
+                        <div class="avatar" style="background: #1800ad;">C</div>
+                        <div>
+                            <strong>Camila R.</strong>
+                            <span>Diseñadora</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate>
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p>"En 3 meses ahorré más que en todo el año anterior. No es magia, es ver la verdad de tus números."</p>
+                    <div class="testimonial-card__author">
+                        <div class="avatar" style="background: #5170ff;">D</div>
+                        <div>
+                            <strong>Diego M.</strong>
+                            <span>Ingeniero</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate>
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p>"Conecté mis cuentas y en 5 minutos entendí por qué nunca me alcanzaba. Ahora tengo un fondo de emergencia."</p>
+                    <div class="testimonial-card__author">
+                        <div class="avatar" style="background: #1800ad;">V</div>
+                        <div>
+                            <strong>Valentina S.</strong>
+                            <span>Emprendedora</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA FINAL ========== -->
+    <section class="section section--cta" id="cta-final">
+        <div class="container cta__inner"></div>
+            <div class="cta__actions">
+                <a href="#" class="btn btn--white btn--lg">
+                    Descargar FinviAPP Gratis
+                    <i data-lucide="download"></i>
+                </a>
+            </div>
+            <p class="cta__note">Sin costo. Sin tarjeta. Sin excusas.</p>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <img src="imagnes/LogoFinviapp.png" alt="FinviAPP" class="footer__logo">
+                <p>Tu dinero merece claridad. Tu futuro merece un plan.</p>
+            </div>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <h4>Producto</h4>
+                    <a href="#como-funciona">Cómo funciona</a>
+                    <a href="#beneficios">Beneficios</a>
+                    <a href="#">Precios</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                    <a href="#">Seguridad</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Contacto</h4>
+                    <a href="#">hola@finviapp.com</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>&copy; 2026 FinviAPP. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
