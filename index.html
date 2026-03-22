@@ -55,6 +55,8 @@
                 <li><a href="#cta-final">Descarga</a></li>
             </ul>
             <a href="#cta-final" class="btn btn--primary navbar__cta">Empieza Gratis</a>
+            <img src="imagnes/logografica.png" alt="FinviAPP Logo" class="navbar__logo-mobile">
+            <a href="#cta-final" class="btn btn--primary navbar__cta-mobile">Prueba Gratis</a>
             <button class="navbar__burger" id="navBurger" aria-label="Menú">
                 <span></span><span></span><span></span>
             </button>
@@ -93,15 +95,32 @@
                 </div>
             </div>
             <div class="hero__visual">
-                <div class="thought-bubble">
-                    <div class="thought-bubble__dot thought-bubble__dot--1"></div>
-                    <div class="thought-bubble__dot thought-bubble__dot--2"></div>
-                    <div class="thought-bubble__dot thought-bubble__dot--3"></div>
-                    <div class="thought-bubble__cloud">
-                        <span>$</span>
+                <!-- Gráfica de bancos conectados a FinviAPP -->
+                <div class="bank-graph" data-animate>
+                    <svg class="bank-graph__lines" viewBox="0 0 400 400" fill="none">
+                        <defs>
+                            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#5170ff" stop-opacity="0.3" />
+                                <stop offset="100%" stop-color="#1800ad" stop-opacity="0.6" />
+                            </linearGradient>
+                        </defs>
+                        <line x1="80" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        <line x1="320" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        <line x1="30" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        <line x1="370" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        <line x1="100" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        <line x1="300" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                    </svg>
+                    <div class="bank-graph__center">
+                        <img src="imagnes/logografica.png" alt="FinviAPP">
                     </div>
+                    <div class="bank-graph__node bank-graph__node--1"><img src="imagnes/bancochile.png" alt="Banco de Chile"></div>
+                    <div class="bank-graph__node bank-graph__node--2"><img src="imagnes/bancoestado.png" alt="BancoEstado"></div>
+                    <div class="bank-graph__node bank-graph__node--3"><img src="imagnes/bancoSantander.png" alt="Santander"></div>
+                    <div class="bank-graph__node bank-graph__node--4"><img src="imagnes/bancobci.png" alt="BCI"></div>
+                    <div class="bank-graph__node bank-graph__node--5"><img src="imagnes/bancoScotie.png" alt="Scotiabank"></div>
+                    <div class="bank-graph__node bank-graph__node--6"><img src="imagnes/bancoitauu.png" alt="Itaú"></div>
                 </div>
-                <img src="imagnes/Imgenesiniciomujer.png" alt="Mujer usando FinviAPP" class="hero__visual-img">
             </div>
         </div>
     </header>
@@ -151,31 +170,16 @@
                         </div>
                     </div>
                 </div>
-                <!-- Gráfica de bancos conectados a FinviAPP -->
-                <div class="bank-graph" data-animate>
-                    <svg class="bank-graph__lines" viewBox="0 0 400 400" fill="none">
-                        <defs>
-                            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#5170ff" stop-opacity="0.3" />
-                                <stop offset="100%" stop-color="#1800ad" stop-opacity="0.6" />
-                            </linearGradient>
-                        </defs>
-                        <line x1="80" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        <line x1="320" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        <line x1="30" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        <line x1="370" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        <line x1="100" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        <line x1="300" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                    </svg>
-                    <div class="bank-graph__center">
-                        <img src="imagnes/logografica.png" alt="FinviAPP">
+                <div class="problema__visual" data-animate>
+                    <div class="thought-bubble">
+                        <div class="thought-bubble__dot thought-bubble__dot--1"></div>
+                        <div class="thought-bubble__dot thought-bubble__dot--2"></div>
+                        <div class="thought-bubble__dot thought-bubble__dot--3"></div>
+                        <div class="thought-bubble__cloud">
+                            <span>$</span>
+                        </div>
                     </div>
-                    <div class="bank-graph__node bank-graph__node--1"><img src="imagnes/bancochile.png" alt="Banco de Chile"></div>
-                    <div class="bank-graph__node bank-graph__node--2"><img src="imagnes/bancoestado.png" alt="BancoEstado"></div>
-                    <div class="bank-graph__node bank-graph__node--3"><img src="imagnes/bancoSantander.png" alt="Santander"></div>
-                    <div class="bank-graph__node bank-graph__node--4"><img src="imagnes/bancobci.png" alt="BCI"></div>
-                    <div class="bank-graph__node bank-graph__node--5"><img src="imagnes/bancoScotie.png" alt="Scotiabank"></div>
-                    <div class="bank-graph__node bank-graph__node--6"><img src="imagnes/bancoitauu.png" alt="Itaú"></div>
+                    <img src="imagnes/Imgenesiniciomujer.png" alt="Mujer usando FinviAPP" class="hero__visual-img">
                 </div>
             </div>
         </div>
@@ -185,14 +189,7 @@
     <section class="section section--light" id="mejora-financiero">
         <div class="container mejora__inner">
             <div class="mejora__image" data-animate>
-                <div class="phone-frame">
-                    <div class="phone-frame__notch">
-                        <div class="phone-frame__camera"></div>
-                    </div>
-                    <div class="phone-frame__screen">
-                        <img src="imagnes/capturaFinviapp.png" alt="FinviAPP en tu celular" class="mejora__img">
-                    </div>
-                </div>
+                <img src="imagnes/celular%20finviapp.png" alt="FinviAPP en tu celular" class="mejora__img">
             </div>
             <div class="mejora__content" data-animate>
                 <p class="section__tag">Tu siguiente paso</p>
@@ -220,50 +217,7 @@
         </div>
     </section>
 
-    <!-- ========== TESTIMONIOS ========== -->
-    <section class="section" id="testimonios">
-        <div class="container">
-            <div class="section__header section__header--center">
-                <p class="section__tag">Sin filtro</p>
-                <h2 class="section__title">Lo que dicen los que <span class="highlight">ya despertaron</span></h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card" data-animate>
-                    <div class="testimonial-card__stars">★★★★★</div>
-                    <p>"Descubrí que gastaba $180.000 al mes en cosas que ni recordaba. Finvi me abrió los ojos."</p>
-                    <div class="testimonial-card__author">
-                        <div class="avatar" style="background: #1800ad;">C</div>
-                        <div>
-                            <strong>Camila R.</strong>
-                            <span>Diseñadora</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card" data-animate>
-                    <div class="testimonial-card__stars">★★★★★</div>
-                    <p>"En 3 meses ahorré más que en todo el año anterior. No es magia, es ver la verdad de tus números."</p>
-                    <div class="testimonial-card__author">
-                        <div class="avatar" style="background: #5170ff;">D</div>
-                        <div>
-                            <strong>Diego M.</strong>
-                            <span>Ingeniero</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card" data-animate>
-                    <div class="testimonial-card__stars">★★★★★</div>
-                    <p>"Conecté mis cuentas y en 5 minutos entendí por qué nunca me alcanzaba. Ahora tengo un fondo de emergencia."</p>
-                    <div class="testimonial-card__author">
-                        <div class="avatar" style="background: #1800ad;">V</div>
-                        <div>
-                            <strong>Valentina S.</strong>
-                            <span>Emprendedora</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
     <!-- ========== CTA FINAL ========== -->
     <section class="section section--cta" id="cta-final">

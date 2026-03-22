@@ -256,6 +256,19 @@ img {
     font-size: 0.85rem;
 }
 
+.navbar__cta-mobile {
+    display: none;
+    padding: 8px 18px;
+    font-size: 0.8rem;
+}
+
+.navbar__logo-mobile {
+    display: none;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
 .navbar__burger {
     display: none;
     flex-direction: column;
@@ -288,23 +301,7 @@ img {
 }
 
 .hero__bg-blur {
-    position: absolute;
-    top: -200px;
-    right: -200px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(81, 112, 255, 0.15) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.hero__bg-blur::after {
-    content: '';
-    position: absolute;
-    bottom: -300px;
-    left: -100px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(24, 0, 173, 0.08) 0%, transparent 70%);
+    display: none;
 }
 
 .hero__inner {
@@ -986,8 +983,10 @@ img {
 
 .mejora__img {
     width: 100%;
+    max-width: 320px;
     display: block;
     object-fit: cover;
+    border-radius: 16px;
 }
 
 .mejora__content {
@@ -1129,6 +1128,20 @@ img {
     grid-template-columns: 1fr 1fr;
     gap: 48px;
     align-items: center;
+}
+
+.problema__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.problema__visual .hero__visual-img {
+    max-width: 380px;
+    width: 100%;
+    border-radius: 16px;
 }
 
 .bank-graph {
@@ -1330,13 +1343,61 @@ img {
         50% { border-bottom-color: transparent; }
     }
 
+    /* Hide desktop nav items */
     .navbar__links,
     .navbar__cta {
         display: none;
     }
 
+    /* Hide logo and brand text on mobile */
+    .navbar__logo {
+        display: none;
+    }
+
+    /* Fixed rounded pill navbar */
+    .navbar {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        padding: 0;
+        z-index: 1000;
+    }
+
+    .navbar.scrolled {
+        background: transparent;
+        backdrop-filter: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .navbar__inner {
+        background: var(--white);
+        border-radius: 50px;
+        padding: 10px 12px 10px 20px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+        gap: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Show mobile logo, CTA and burger */
+    .navbar__logo-mobile {
+        display: block;
+    }
+
+    .navbar__cta-mobile {
+        display: inline-flex;
+    }
+
     .navbar__burger {
         display: flex;
+    }
+
+    .navbar__burger span {
+        background: var(--gray-800);
     }
 
     /* Mobile nav open */
@@ -1344,23 +1405,20 @@ img {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        top: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 240px;
         background: var(--white);
         padding: 24px;
         gap: 16px;
-        box-shadow: var(--shadow-lg);
-        border-radius: 0 0 var(--radius) var(--radius);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        border-radius: 20px;
+        text-align: center;
     }
 
     .navbar.nav-open .navbar__cta {
-        display: inline-flex;
-        position: absolute;
-        top: calc(100% + 180px);
-        left: 24px;
-        right: 24px;
-        justify-content: center;
+        display: none;
     }
 
     .navbar.nav-open .navbar__burger span:nth-child(1) {
