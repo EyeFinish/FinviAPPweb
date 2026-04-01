@@ -258,27 +258,35 @@ document.addEventListener('DOMContentLoaded', () => {
             delete window[callbackName];
             script.remove();
             const count = parseInt(data && data.count, 10);
-            if (!isNaN(count) && count > 0) wlAnimateCount(count);
+            const display = (!isNaN(count) ? count : 0) + 100;
+            wlAnimateCount(display);
         };
 
         script.src = `${WL_CONFIG.APPS_SCRIPT_URL}?action=count&callback=${callbackName}`;
-        script.onerror = () => { delete window[callbackName]; script.remove(); };
+        script.onerror = () => {
+            delete window[callbackName];
+            script.remove();
+            // Fallback: anima con el número del HTML
+            wlAnimateCount(WL_CONFIG.FALLBACK_COUNT);
+        };
         document.head.appendChild(script);
     }
 
     function wlAnimateCount(targetCount) {
-        const current = parseInt(wlCountNum.textContent.replace(/\D/g, ''), 10) || 0;
-        const duration = 800;
+        // Siempre arranca desde 0 para el efecto de conteo creciente
+        const startFrom = 0;
+        const duration = 1800;
         const start = performance.now();
 
         function tick(now) {
             const progress = Math.min((now - start) / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
-            wlCountNum.textContent = Math.floor(current + eased * (targetCount - current));
+            wlCountNum.textContent = Math.floor(startFrom + eased * (targetCount - startFrom));
             if (progress < 1) requestAnimationFrame(tick);
             else wlCountNum.textContent = targetCount;
         }
 
+        wlCountNum.textContent = startFrom;
         requestAnimationFrame(tick);
     }
 
