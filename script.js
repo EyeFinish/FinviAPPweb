@@ -167,6 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const wlEmailError   = document.getElementById('wlEmailError');
     const wlPhoneError   = document.getElementById('wlPhoneError');
 
+    // Número real obtenido al cargar la página (null = aún pendiente)
+    let wlRealCount = null;
+
     // ── Abrir / Cerrar ──
 
     function wlOpen() {
@@ -180,9 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         document.body.classList.add('wl-open');
         setTimeout(() => wlEmailInput && wlEmailInput.focus(), 300);
-        // Animar inmediatamente con el fallback, luego actualizar si llega el número real
-        wlAnimateCount(WL_CONFIG.FALLBACK_COUNT);
-        wlFetchCount();
+        // Animar con el número real si ya llegó, si no con el fallback
+        wlAnimateCount(wlRealCount !== null ? wlRealCount : WL_CONFIG.FALLBACK_COUNT);
         if (window.lucide) lucide.createIcons();
     }
 
@@ -251,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ── Fetch del contador (JSONP para evitar CORS con Apps Script) ──
+    // ── Fetch del contador al cargar la página (JSONP para evitar CORS) ──
     function wlFetchCount() {
         const callbackName = '_wlCountCb_' + Date.now();
         const script = document.createElement('script');
@@ -261,9 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
             script.remove();
             const count = parseInt(data && data.count, 10);
             if (!isNaN(count)) {
-                const display = count + 100;
-                // Solo actualiza el número final sin re-animar si ya terminó
-                wlCountNum.textContent = display;
+                wlRealCount = count + 100;
             }
         };
 
@@ -437,5 +437,8 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('cookieConsent', 'essential');
         cookieBanner.classList.remove('cookie-banner--visible');
     });
+
+    // Fetchear el conteo real en segundo plano al cargar la página
+    wlFetchCount();
 
 });
