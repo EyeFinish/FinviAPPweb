@@ -180,6 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         document.body.classList.add('wl-open');
         setTimeout(() => wlEmailInput && wlEmailInput.focus(), 300);
+        // Animar inmediatamente con el fallback, luego actualizar si llega el número real
+        wlAnimateCount(WL_CONFIG.FALLBACK_COUNT);
         wlFetchCount();
         if (window.lucide) lucide.createIcons();
     }
@@ -258,17 +260,15 @@ document.addEventListener('DOMContentLoaded', () => {
             delete window[callbackName];
             script.remove();
             const count = parseInt(data && data.count, 10);
-            const display = (!isNaN(count) ? count : 0) + 100;
-            wlAnimateCount(display);
+            if (!isNaN(count)) {
+                const display = count + 100;
+                // Solo actualiza el número final sin re-animar si ya terminó
+                wlCountNum.textContent = display;
+            }
         };
 
         script.src = `${WL_CONFIG.APPS_SCRIPT_URL}?action=count&callback=${callbackName}`;
-        script.onerror = () => {
-            delete window[callbackName];
-            script.remove();
-            // Fallback: anima con el número del HTML
-            wlAnimateCount(WL_CONFIG.FALLBACK_COUNT);
-        };
+        script.onerror = () => { delete window[callbackName]; script.remove(); };
         document.head.appendChild(script);
     }
 
