@@ -52,11 +52,11 @@
                 <li><a href="#problema">El Problema</a></li>
                 <li><a href="#mejora-financiero">Mejora Financiera</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#cta-final">Descarga</a></li>
+                <li><a href="#cta-final">Sala de Espera</a></li>
             </ul>
-            <a href="#cta-final" class="btn btn--primary navbar__cta">Empieza Gratis</a>
+            <a href="#" class="btn btn--primary navbar__cta">Sala de Espera</a>
             <img src="imagnes/logografica.png" alt="FinviAPP Logo" class="navbar__logo-mobile">
-            <a href="#cta-final" class="btn btn--primary navbar__cta-mobile">Prueba Gratis</a>
+            <a href="#" class="btn btn--primary navbar__cta-mobile">Sala de Espera</a>
             <button class="navbar__burger" id="navBurger" aria-label="Menú">
                 <span></span><span></span><span></span>
             </button>
@@ -76,8 +76,8 @@
                     FinviAPP conecta tus bancos, te muestra la verdad sobre tus gastos. <strong>Sin excusas. Sin mentirte.</strong>
                 </p>
                 <div class="hero__actions">
-                    <a href="#cta-final" class="btn btn--primary btn--lg">
-                        Quiero ver mi realidad financiera
+                    <a href="#" class="btn btn--primary btn--lg">
+                        Unirme a la Sala de Espera
                         <i data-lucide="arrow-right"></i>
                     </a>
                     <a href="#como-funciona" class="btn btn--ghost btn--lg">
@@ -209,8 +209,8 @@
                         <span>Ahorra sin esfuerzo con metas automáticas</span>
                     </li>
                 </ul>
-                <a href="#cta-final" class="btn btn--primary btn--lg">
-                    Empieza a mejorar hoy
+                <a href="#" class="btn btn--primary btn--lg">
+                    Quiero mi lugar en la lista
                     <i data-lucide="arrow-right"></i>
                 </a>
             </div>
@@ -219,16 +219,19 @@
 
   
 
-    <!-- ========== CTA FINAL ========== -->
+    <!-- ========== SALA DE ESPERA ========== -->
     <section class="section section--cta" id="cta-final">
-        <div class="container cta__inner"></div>
+        <div class="container cta__inner">
+            <span class="cta__badge">Lanzamiento próximo</span>
+            <h2 class="cta__title">Sé de los primeros en<br>usar <span class="highlight-white">FinviAPP</span></h2>
+            <p class="cta__subtitle">Estamos en beta. Anótate ahora y te avisamos cuando esté listo para ti — sin costo, sin tarjeta.</p>
             <div class="cta__actions">
                 <a href="#" class="btn btn--white btn--lg">
-                    Descargar FinviAPP Gratis
-                    <i data-lucide="download"></i>
+                    Unirme a la Sala de Espera
+                    <i data-lucide="arrow-right"></i>
                 </a>
             </div>
-            <p class="cta__note">Sin costo. Sin tarjeta. Sin excusas.</p>
+            <p class="cta__note">Sin spam. Sin costo. Puedes cancelar cuando quieras.</p>
         </div>
     </section>
 
@@ -236,25 +239,28 @@
     <footer class="footer">
         <div class="container footer__inner">
             <div class="footer__brand">
-                <img src="imagnes/LogoFinviapp.png" alt="FinviAPP" class="footer__logo">
+                <div class="footer__logo-wrap">
+                    <div class="footer__logo-icon">F</div>
+                    <span class="footer__logo-name">FinviAPP</span>
+                </div>
                 <p>Tu dinero merece claridad. Tu futuro merece un plan.</p>
             </div>
             <div class="footer__links">
                 <div class="footer__col">
                     <h4>Producto</h4>
                     <a href="#como-funciona">Cómo funciona</a>
-                    <a href="#beneficios">Beneficios</a>
+                    <a href="#mejora-financiero">Beneficios</a>
                     <a href="#">Precios</a>
                 </div>
                 <div class="footer__col">
                     <h4>Legal</h4>
-                    <a href="#">Privacidad</a>
-                    <a href="#">Términos</a>
-                    <a href="#">Seguridad</a>
+                    <a href="privacidad.html">Privacidad</a>
+                    <a href="terminos.html">Términos</a>
+                    <a href="seguridad.html">Seguridad</a>
                 </div>
                 <div class="footer__col">
                     <h4>Contacto</h4>
-                    <a href="mailto:hola@finviapp.com">hola@finviapp.com</a>
+                    <a href="mailto:admin@finviapp.com">admin@finviapp.com</a>
                     <a href="#">Instagram</a>
                     <a href="#">Twitter</a>
                 </div>
@@ -264,6 +270,125 @@
             <p>&copy; 2026 FinviAPP. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- ========== MODAL LISTA DE ESPERA ========== -->
+    <div class="wl-overlay" id="wlOverlay" role="dialog" aria-modal="true" aria-labelledby="wlTitle" hidden>
+        <div class="wl-modal">
+
+            <button class="wl-modal__close" id="wlCloseBtn" aria-label="Cerrar">
+                <i data-lucide="x"></i>
+            </button>
+
+            <!-- Paso 1: Formulario -->
+            <div class="wl-step" id="wlStepForm">
+                <div class="wl-modal__header">
+                    <span class="wl-modal__badge">Lista de espera</span>
+                    <h2 class="wl-modal__title" id="wlTitle">
+                        Sé el primero en<br><span class="highlight">usar FinviAPP</span>
+                    </h2>
+                    <p class="wl-modal__subtitle">
+                        Ingresa tus datos y te avisamos cuando estés listo para empezar.
+                    </p>
+                </div>
+
+                <!-- Contador FOMO -->
+                <div class="wl-counter">
+                    <span class="wl-counter__dot"></span>
+                    <span><strong id="wlCountNum">247</strong> personas ya en lista de espera</span>
+                </div>
+
+                <!-- Formulario -->
+                <form class="wl-form" id="wlForm" novalidate>
+                    <div class="wl-field" id="wlFieldEmail">
+                        <label class="wl-field__label" for="wlEmail">Correo electrónico</label>
+                        <div class="wl-field__wrap">
+                            <i data-lucide="mail" class="wl-field__icon"></i>
+                            <input
+                                type="email"
+                                id="wlEmail"
+                                name="email"
+                                class="wl-field__input"
+                                placeholder="tu@correo.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                        <span class="wl-field__error" id="wlEmailError"></span>
+                    </div>
+
+                    <div class="wl-field" id="wlFieldPhone">
+                        <label class="wl-field__label" for="wlPhone">Número de celular</label>
+                        <div class="wl-field__wrap">
+                            <span class="wl-field__prefix">+56</span>
+                            <input
+                                type="tel"
+                                id="wlPhone"
+                                name="phone"
+                                class="wl-field__input wl-field__input--prefixed"
+                                placeholder="9 1234 5678"
+                                maxlength="9"
+                                autocomplete="tel-national"
+                                inputmode="numeric"
+                                required
+                            >
+                        </div>
+                        <span class="wl-field__error" id="wlPhoneError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--lg wl-form__submit" id="wlSubmit">
+                        <span id="wlSubmitText">Quiero mi lugar</span>
+                        <span id="wlSubmitSpinner" class="wl-spinner" hidden></span>
+                        <i data-lucide="arrow-right" id="wlSubmitIcon"></i>
+                    </button>
+
+                    <p class="wl-form__privacy">
+                        Sin spam. Sin costo. Puedes cancelar cuando quieras.
+                    </p>
+                </form>
+            </div>
+
+            <!-- Paso 2: Éxito -->
+            <div class="wl-step" id="wlStepSuccess" hidden>
+                <div class="wl-success">
+                    <div class="wl-success__icon">
+                        <i data-lucide="party-popper"></i>
+                    </div>
+                    <h2 class="wl-modal__title">¡Ya estás dentro!</h2>
+                    <p class="wl-modal__subtitle">
+                        Quedaste en el lugar <strong class="wl-success__position" id="wlPosition">#248</strong> de la lista.
+                        Te avisaremos cuando FinviAPP esté listo para ti.
+                    </p>
+                    <div class="wl-success__share">
+                        <p>Comparte y sube en la lista:</p>
+                        <div class="wl-success__share-btns">
+                            <button class="btn btn--ghost" id="wlShareWhatsapp">
+                                <i data-lucide="message-circle"></i> WhatsApp
+                            </button>
+                            <button class="btn btn--ghost" id="wlShareCopy">
+                                <i data-lucide="copy"></i> Copiar link
+                            </button>
+                        </div>
+                    </div>
+                    <button class="btn btn--primary" id="wlDone">
+                        Perfecto, gracias
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== BANNER COOKIES ========== -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner__text">
+            <strong>Usamos cookies</strong> — Utilizamos cookies esenciales para el funcionamiento del sitio y, con tu permiso, cookies de análisis para mejorar tu experiencia.
+            <a href="privacidad.html">Política de Privacidad</a>
+        </div>
+        <div class="cookie-banner__actions">
+            <button id="cookieDecline" class="btn btn--ghost">Solo esenciales</button>
+            <button id="cookieAccept" class="btn btn--primary">Aceptar todo</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
