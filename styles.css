@@ -413,47 +413,34 @@ img {
     border-radius: 20px;
 }
 
-.hero__video-play-overlay {
+.hero__video-unmute {
     position: absolute;
-    inset: 0;
-    display: flex;
+    bottom: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.35);
-    border-radius: 20px;
-    transition: opacity 0.3s ease;
-    cursor: pointer;
-}
-
-.hero__video-play-overlay.hidden {
-    opacity: 0;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.75rem;
+    font-weight: 500;
     pointer-events: none;
+    white-space: nowrap;
+    transition: opacity 0.4s ease;
 }
 
-.hero__video-play-btn {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: var(--gradient);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 32px rgba(81, 112, 255, 0.5);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.hero__video-unmute svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
 }
 
-.hero__video-play-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 40px rgba(81, 112, 255, 0.7);
-}
-
-.hero__video-play-btn svg {
-    width: 28px;
-    height: 28px;
-    color: var(--white);
-    margin-left: 4px;
+.hero__video-unmute.hidden {
+    opacity: 0;
 }
 
 /* Thought Bubble */

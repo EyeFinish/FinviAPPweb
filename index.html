@@ -96,13 +96,12 @@
             </div>
             <div class="hero__visual">
                 <div class="hero__video-wrap" data-animate>
-                    <video id="heroVideo" class="hero__video" controls playsinline>
+                    <video id="heroVideo" class="hero__video" autoplay muted controls playsinline>
                         <source src="imagnes/videowebfinvioficial1.mp4" type="video/mp4">
                     </video>
-                    <div id="heroVideoPlay" class="hero__video-play-overlay">
-                        <button class="hero__video-play-btn" aria-label="Reproducir video">
-                            <i data-lucide="play"></i>
-                        </button>
+                    <div id="heroVideoUnmute" class="hero__video-unmute">
+                        <i data-lucide="volume-x"></i>
+                        <span>Toca para activar audio</span>
                     </div>
                 </div>
             </div>

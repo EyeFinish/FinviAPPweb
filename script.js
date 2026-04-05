@@ -119,15 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return num.toString();
     }
 
-    // ── Video hero: play con audio al presionar el botón ──
-    const heroVideo       = document.getElementById('heroVideo');
-    const heroPlayOverlay = document.getElementById('heroVideoPlay');
+    // ── Autoplay con audio al primer clic ──
+    const heroVideo  = document.getElementById('heroVideo');
+    const unmuteHint = document.getElementById('heroVideoUnmute');
 
-    if (heroVideo && heroPlayOverlay) {
-        heroPlayOverlay.addEventListener('click', () => {
-            heroVideo.play();
-            heroPlayOverlay.classList.add('hidden');
-        });
+    if (heroVideo && unmuteHint) {
+        const enableAudio = () => {
+            heroVideo.muted = false;
+            unmuteHint.classList.add('hidden');
+        };
+        document.addEventListener('click',      enableAudio, { once: true });
+        document.addEventListener('touchstart', enableAudio, { once: true });
     }
 
     // ── Smooth scroll for anchor links ──
