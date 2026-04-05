@@ -95,31 +95,15 @@
                 </div>
             </div>
             <div class="hero__visual">
-                <!-- Gráfica de bancos conectados a FinviAPP -->
-                <div class="bank-graph" data-animate>
-                    <svg class="bank-graph__lines" viewBox="0 0 400 400" fill="none">
-                        <defs>
-                            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#5170ff" stop-opacity="0.3" />
-                                <stop offset="100%" stop-color="#1800ad" stop-opacity="0.6" />
-                            </linearGradient>
-                        </defs>
-                        <line x1="80" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        <line x1="320" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        <line x1="30" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        <line x1="370" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        <line x1="100" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        <line x1="300" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                    </svg>
-                    <div class="bank-graph__center">
-                        <img src="imagnes/logografica.png" alt="FinviAPP">
+                <div class="hero__video-wrap" data-animate>
+                    <video id="heroVideo" class="hero__video" controls playsinline>
+                        <source src="imagnes/videowebfinvioficial1.mp4" type="video/mp4">
+                    </video>
+                    <div id="heroVideoPlay" class="hero__video-play-overlay">
+                        <button class="hero__video-play-btn" aria-label="Reproducir video">
+                            <i data-lucide="play"></i>
+                        </button>
                     </div>
-                    <div class="bank-graph__node bank-graph__node--1"><img src="imagnes/bancochile.png" alt="Banco de Chile"></div>
-                    <div class="bank-graph__node bank-graph__node--2"><img src="imagnes/bancoestado.png" alt="BancoEstado"></div>
-                    <div class="bank-graph__node bank-graph__node--3"><img src="imagnes/bancoSantander.png" alt="Santander"></div>
-                    <div class="bank-graph__node bank-graph__node--4"><img src="imagnes/bancobci.png" alt="BCI"></div>
-                    <div class="bank-graph__node bank-graph__node--5"><img src="imagnes/bancoScotie.png" alt="Scotiabank"></div>
-                    <div class="bank-graph__node bank-graph__node--6"><img src="imagnes/bancoitauu.png" alt="Itaú"></div>
                 </div>
             </div>
         </div>
@@ -171,15 +155,31 @@
                     </div>
                 </div>
                 <div class="problema__visual" data-animate>
-                    <div class="thought-bubble">
-                        <div class="thought-bubble__dot thought-bubble__dot--1"></div>
-                        <div class="thought-bubble__dot thought-bubble__dot--2"></div>
-                        <div class="thought-bubble__dot thought-bubble__dot--3"></div>
-                        <div class="thought-bubble__cloud">
-                            <span>$</span>
+                    <div class="bank-graph">
+                        <svg class="bank-graph__lines" viewBox="0 0 400 400" fill="none">
+                            <defs>
+                                <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#5170ff" stop-opacity="0.3" />
+                                    <stop offset="100%" stop-color="#1800ad" stop-opacity="0.6" />
+                                </linearGradient>
+                            </defs>
+                            <line x1="80" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                            <line x1="320" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                            <line x1="30" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                            <line x1="370" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                            <line x1="100" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                            <line x1="300" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
+                        </svg>
+                        <div class="bank-graph__center">
+                            <img src="imagnes/logografica.png" alt="FinviAPP">
                         </div>
+                        <div class="bank-graph__node bank-graph__node--1"><img src="imagnes/bancochile.png" alt="Banco de Chile"></div>
+                        <div class="bank-graph__node bank-graph__node--2"><img src="imagnes/bancoestado.png" alt="BancoEstado"></div>
+                        <div class="bank-graph__node bank-graph__node--3"><img src="imagnes/bancoSantander.png" alt="Santander"></div>
+                        <div class="bank-graph__node bank-graph__node--4"><img src="imagnes/bancobci.png" alt="BCI"></div>
+                        <div class="bank-graph__node bank-graph__node--5"><img src="imagnes/bancoScotie.png" alt="Scotiabank"></div>
+                        <div class="bank-graph__node bank-graph__node--6"><img src="imagnes/bancoitauu.png" alt="Itaú"></div>
                     </div>
-                    <img src="imagnes/Imgenesiniciomujer.png" alt="Mujer usando FinviAPP" class="hero__visual-img">
                 </div>
             </div>
         </div>
@@ -189,7 +189,85 @@
     <section class="section section--light" id="mejora-financiero">
         <div class="container mejora__inner">
             <div class="mejora__image" data-animate>
-                <img src="imagnes/celular%20finviapp.png" alt="FinviAPP en tu celular" class="mejora__img">
+              <div class="app-cards">
+
+                <!-- Transacciones recientes -->
+                <div class="app-card app-card--tx">
+                  <p class="app-card__label">Transacciones recientes</p>
+                  <div class="app-mockup__tx app-mockup__tx--1">
+                    <div class="app-mockup__tx-left">
+                      <div class="app-mockup__icon-wrap app-mockup__icon-wrap--purple"><i data-lucide="music"></i></div>
+                      <div class="app-mockup__tx-info">
+                        <span class="app-mockup__tx-name">Ocio</span>
+                        <span class="app-mockup__tx-badge app-mockup__tx-badge--purple">Entretenimiento</span>
+                      </div>
+                    </div>
+                    <span class="app-mockup__tx-amount app-mockup__tx-amount--neg">-$25.000</span>
+                  </div>
+                  <div class="app-mockup__tx app-mockup__tx--2">
+                    <div class="app-mockup__tx-left">
+                      <div class="app-mockup__icon-wrap app-mockup__icon-wrap--blue"><i data-lucide="arrow-left-right"></i></div>
+                      <div class="app-mockup__tx-info">
+                        <span class="app-mockup__tx-name">Transferencia</span>
+                        <span class="app-mockup__tx-badge app-mockup__tx-badge--blue">Banco</span>
+                      </div>
+                    </div>
+                    <span class="app-mockup__tx-amount app-mockup__tx-amount--neg">-$80.000</span>
+                  </div>
+                  <div class="app-mockup__tx app-mockup__tx--3">
+                    <div class="app-mockup__tx-left">
+                      <div class="app-mockup__icon-wrap app-mockup__icon-wrap--teal"><i data-lucide="shopping-bag"></i></div>
+                      <div class="app-mockup__tx-info">
+                        <span class="app-mockup__tx-name">Supermercado</span>
+                        <span class="app-mockup__tx-badge app-mockup__tx-badge--teal">Alimentación</span>
+                      </div>
+                    </div>
+                    <span class="app-mockup__tx-amount app-mockup__tx-amount--neg">-$35.000</span>
+                  </div>
+                  <!-- Flecha animada que "pasa" al compromiso -->
+                  <div class="app-cards__flow-arrow">
+                    <i data-lucide="arrow-down"></i>
+                  </div>
+                </div>
+
+                <!-- Compromisos Mensuales -->
+                <div class="app-card app-card--commit">
+                  <p class="app-card__label">Compromisos Mensuales</p>
+                  <div class="app-mockup__commitment app-mockup__commitment--1">
+                    <div class="app-mockup__commitment-top">
+                      <div class="app-mockup__commitment-left">
+                        <div class="app-mockup__icon-wrap app-mockup__icon-wrap--blue"><i data-lucide="home"></i></div>
+                        <span class="app-mockup__commitment-name">Arriendo</span>
+                      </div>
+                      <span class="app-mockup__commitment-amount">$450.000</span>
+                    </div>
+                    <div class="app-mockup__progress-track">
+                      <div class="app-mockup__bar-fill app-mockup__bar-fill--85"></div>
+                    </div>
+                    <div class="app-mockup__progress-meta">
+                      <span class="app-mockup__progress-pct">85%</span>
+                      <span class="app-mockup__progress-label">del mes</span>
+                    </div>
+                  </div>
+                  <div class="app-mockup__commitment app-mockup__commitment--2">
+                    <div class="app-mockup__commitment-top">
+                      <div class="app-mockup__commitment-left">
+                        <div class="app-mockup__icon-wrap app-mockup__icon-wrap--teal"><i data-lucide="shopping-cart"></i></div>
+                        <span class="app-mockup__commitment-name">Alimentación</span>
+                      </div>
+                      <span class="app-mockup__commitment-amount">$120.000</span>
+                    </div>
+                    <div class="app-mockup__progress-track">
+                      <div class="app-mockup__bar-fill app-mockup__bar-fill--60"></div>
+                    </div>
+                    <div class="app-mockup__progress-meta">
+                      <span class="app-mockup__progress-pct">60%</span>
+                      <span class="app-mockup__progress-label">del mes</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
             <div class="mejora__content" data-animate>
                 <p class="section__tag">Tu siguiente paso</p>

@@ -398,6 +398,64 @@ img {
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
 }
 
+/* ── Video en hero ── */
+.hero__video-wrap {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero__video {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+
+.hero__video-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.hero__video-play-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hero__video-play-btn {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--gradient);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 32px rgba(81, 112, 255, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero__video-play-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 40px rgba(81, 112, 255, 0.7);
+}
+
+.hero__video-play-btn svg {
+    width: 28px;
+    height: 28px;
+    color: var(--white);
+    margin-left: 4px;
+}
+
 /* Thought Bubble */
 .thought-bubble {
     position: absolute;
@@ -1027,6 +1085,287 @@ img {
 }
 
 /* ════════════════════════════════════════
+   APP CARDS (floating UI cards — no phone frame)
+   ════════════════════════════════════════ */
+
+/* ── Contenedor general (columna, sin fondo) ── */
+.app-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    max-width: 280px;
+}
+
+/* ── Tarjeta individual flotante ── */
+.app-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 11px 13px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-100);
+    position: relative;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease,
+                box-shadow 0.3s ease;
+}
+
+.app-card:hover {
+    box-shadow: 0 16px 48px rgba(24, 0, 173, 0.14);
+    transform: translateY(-2px);
+}
+
+/* Línea de acento superior con gradiente */
+.app-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 18px; right: 18px;
+    height: 2px;
+    border-radius: 0 0 2px 2px;
+    background: var(--gradient);
+    opacity: 0.6;
+}
+
+/* ── Label de sección dentro de cada tarjeta ── */
+.app-card__label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 8px;
+}
+
+/* ── Flecha de flujo entre tarjetas ── */
+.app-cards__flow-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 0;
+    opacity: 0;
+}
+
+.app-cards__flow-arrow svg {
+    width: 14px;
+    height: 18px;
+    color: var(--secondary);
+}
+
+/* ── Íconos de categoría ── */
+.app-mockup__icon-wrap {
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.app-mockup__icon-wrap svg {
+    width: 12px;
+    height: 12px;
+}
+
+.app-mockup__icon-wrap--blue   { background: rgba(81, 112, 255, 0.12); color: var(--secondary); }
+.app-mockup__icon-wrap--teal   { background: rgba(0, 184, 163, 0.12);  color: #00b8a3; }
+.app-mockup__icon-wrap--purple { background: rgba(120, 80, 220, 0.12); color: #7850dc; }
+
+/* ── Filas de transacción ── */
+.app-mockup__tx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--gray-100);
+    opacity: 0;
+    transform: translateX(14px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.app-mockup__tx:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.app-mockup__tx-left {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.app-mockup__tx-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.app-mockup__tx-name {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    line-height: 1.2;
+}
+
+.app-mockup__tx-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 1px 7px;
+    border-radius: 50px;
+    line-height: 1.6;
+}
+
+.app-mockup__tx-badge--purple { background: rgba(120, 80, 220, 0.10); color: #7850dc; }
+.app-mockup__tx-badge--blue   { background: rgba(81, 112, 255, 0.10); color: var(--secondary); }
+.app-mockup__tx-badge--teal   { background: rgba(0, 184, 163, 0.10);  color: #00b8a3; }
+
+.app-mockup__tx-amount {
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.app-mockup__tx-amount--neg { color: #e85353; }
+
+/* ── Filas de compromiso mensual ── */
+.app-mockup__commitment {
+    background: var(--gray-50);
+    border-radius: var(--radius-sm);
+    padding: 7px 10px;
+    margin-bottom: 6px;
+    border: 1px solid var(--gray-100);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.app-mockup__commitment:last-child { margin-bottom: 0; }
+
+.app-mockup__commitment-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.app-mockup__commitment-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.app-mockup__commitment-name   { font-size: 0.72rem; font-weight: 600; color: var(--gray-800); }
+.app-mockup__commitment-amount { font-size: 0.72rem; font-weight: 700; color: var(--gray-800); }
+
+/* ── Barra de progreso ── */
+.app-mockup__progress-track {
+    height: 5px;
+    background: var(--gray-200);
+    border-radius: 50px;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.app-mockup__bar-fill {
+    height: 100%;
+    border-radius: 50px;
+    background: var(--gradient);
+    width: 0%;
+}
+
+.app-mockup__progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-mockup__progress-pct   { font-size: 0.65rem; font-weight: 700; color: var(--secondary); }
+.app-mockup__progress-label { font-size: 0.65rem; color: var(--gray-600); }
+
+/* ════════════════════════════════════════
+   SECUENCIA DE ANIMACIÓN AL HACER SCROLL
+   1. Tarjeta TX aparece
+   2. Filas de TX entran en cascada
+   3. Flecha de flujo aparece y rebota
+   4. Tarjeta de compromiso aparece
+   5. Compromisos entran en cascada
+   6. Barras se llenan
+   ════════════════════════════════════════ */
+
+/* Tarjeta transacciones */
+.mejora__image.visible .app-card--tx {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.05s;
+}
+
+/* Filas de transacción (escalonadas) */
+.mejora__image.visible .app-mockup__tx--1 { opacity: 1; transform: translateX(0); transition-delay: 0.20s; }
+.mejora__image.visible .app-mockup__tx--2 { opacity: 1; transform: translateX(0); transition-delay: 0.35s; }
+.mejora__image.visible .app-mockup__tx--3 { opacity: 1; transform: translateX(0); transition-delay: 0.50s; }
+
+/* Flecha de flujo: aparece y rebota */
+.mejora__image.visible .app-cards__flow-arrow {
+    animation: flow-arrow-in 0.5s ease 0.72s forwards;
+}
+
+@keyframes flow-arrow-in {
+    0%   { opacity: 0; transform: translateY(-6px); }
+    60%  { opacity: 1; transform: translateY(3px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación continua de rebote en la flecha */
+.mejora__image.visible .app-cards__flow-arrow svg {
+    animation: flow-arrow-bounce 1.4s ease-in-out 1.3s infinite;
+}
+
+@keyframes flow-arrow-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(4px); }
+}
+
+/* Tarjeta compromiso */
+.mejora__image.visible .app-card--commit {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.85s;
+}
+
+/* Filas de compromiso (escalonadas) */
+.mejora__image.visible .app-mockup__commitment--1 { opacity: 1; transform: translateY(0); transition-delay: 1.00s; }
+.mejora__image.visible .app-mockup__commitment--2 { opacity: 1; transform: translateY(0); transition-delay: 1.15s; }
+
+/* Barras de progreso (se llenan al final) */
+.mejora__image.visible .app-mockup__bar-fill--85 {
+    animation: bar-fill-85 1.1s cubic-bezier(0.4, 0, 0.2, 1) 1.25s forwards;
+}
+
+.mejora__image.visible .app-mockup__bar-fill--60 {
+    animation: bar-fill-60 1.1s cubic-bezier(0.4, 0, 0.2, 1) 1.45s forwards;
+}
+
+@keyframes bar-fill-85 {
+    from { width: 0%; }
+    to   { width: 85%; }
+}
+
+@keyframes bar-fill-60 {
+    from { width: 0%; }
+    to   { width: 60%; }
+}
+
+@media (max-width: 1024px) {
+    .app-cards { max-width: 260px; }
+}
+
+@media (max-width: 768px) {
+    .app-cards { max-width: 100%; width: 100%; }
+}
+
+/* ════════════════════════════════════════
    CTA
    ════════════════════════════════════════ */
 .cta__badge {
@@ -1183,13 +1522,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-}
-
-.problema__visual .hero__visual-img {
-    max-width: 380px;
-    width: 100%;
-    border-radius: 16px;
+    margin-top: 0;
 }
 
 .bank-graph {
@@ -1343,6 +1676,10 @@ img {
 
     .hero__visual-img {
         max-height: 340px;
+    }
+
+    .hero__video-wrap {
+        max-width: 100%;
     }
 
     .pain-grid,

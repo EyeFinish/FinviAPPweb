@@ -119,6 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return num.toString();
     }
 
+    // ── Video hero: play con audio al presionar el botón ──
+    const heroVideo       = document.getElementById('heroVideo');
+    const heroPlayOverlay = document.getElementById('heroVideoPlay');
+
+    if (heroVideo && heroPlayOverlay) {
+        heroPlayOverlay.addEventListener('click', () => {
+            heroVideo.play();
+            heroPlayOverlay.classList.add('hidden');
+        });
+    }
+
     // ── Smooth scroll for anchor links ──
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
