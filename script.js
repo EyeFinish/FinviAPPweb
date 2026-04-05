@@ -119,17 +119,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return num.toString();
     }
 
-    // ── Autoplay con audio al primer clic ──
+    // ── Badge "activar audio": desaparece cuando el video se desmutea ──
     const heroVideo  = document.getElementById('heroVideo');
     const unmuteHint = document.getElementById('heroVideoUnmute');
 
     if (heroVideo && unmuteHint) {
-        const enableAudio = () => {
-            heroVideo.muted = false;
-            unmuteHint.classList.add('hidden');
-        };
-        document.addEventListener('click',      enableAudio, { once: true });
-        document.addEventListener('touchstart', enableAudio, { once: true });
+        heroVideo.addEventListener('volumechange', () => {
+            if (!heroVideo.muted) {
+                unmuteHint.classList.add('hidden');
+            }
+        });
     }
 
     // ── Smooth scroll for anchor links ──
