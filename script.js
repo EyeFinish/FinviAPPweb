@@ -224,8 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctaSelectors = [
         '.navbar__cta',
         '.navbar__cta-mobile',
-        '.mejora__content .btn--primary',
-        '.cta__actions .btn--white',
+        '.cta-card__btn',
     ];
 
     ctaSelectors.forEach(selector => {
@@ -452,5 +451,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetchear el conteo real en segundo plano al cargar la página
     wlFetchCount();
+
+    // ════════════════════════════════════════
+    // ANIMACIONES SECCIÓN COMO FUNCIONA
+    // ════════════════════════════════════════
+
+    const procesoSteps = document.querySelectorAll('.proceso__step');
+
+    const procesoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const step = entry.target;
+
+            if (step.classList.contains('proceso__step--01')) {
+                animateSalary(step);
+            } else if (step.classList.contains('proceso__step--02')) {
+                step.classList.add('proc-visible');
+            } else if (step.classList.contains('proceso__step--03')) {
+                animateOrdenFinanciero(step);
+            }
+
+            procesoObserver.unobserve(step);
+        });
+    }, { threshold: 0.35 });
+
+    procesoSteps.forEach(step => procesoObserver.observe(step));
+
+    function animateSalary(step) {
+        const el = step.querySelector('.proceso__salary');
+        if (!el) return;
+        const target = 2500000;
+        const duration = 2200;
+        const start = performance.now();
+
+        function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(eased * target);
+            el.textContent = '$ ' + current.toLocaleString('es-CL');
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            } else {
+                el.textContent = '$ 2.500.000';
+            }
+        }
+        requestAnimationFrame(tick);
+    }
+
+    function animateOrdenFinanciero(step) {
+        const commitRow = step.querySelector('.proceso__row--commit');
+        const txRows    = step.querySelectorAll('.proceso__row--tx');
+
+        // Arriendo: efecto "ticket colocado" con rebote
+        setTimeout(() => {
+            if (commitRow) commitRow.classList.add('row-visible');
+        }, 180);
+
+        // Transacciones: entrada escalonada desde la derecha
+        txRows.forEach((row, i) => {
+            setTimeout(() => {
+                row.classList.add('row-visible');
+            }, 520 + i * 230);
+        });
+    }
 
 });

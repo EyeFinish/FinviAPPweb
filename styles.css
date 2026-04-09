@@ -719,13 +719,16 @@ img {
 
 .proceso__bank-icons {
     display: flex;
-    gap: 10px;
+    gap: 6px;
     align-items: center;
+    width: 100%;
+    padding: 0 4px;
 }
 
 .proceso__bank-icon {
     width: 48px;
     height: 48px;
+    flex-shrink: 0;
     border-radius: 50%;
     background: var(--gray-50);
     display: flex;
@@ -745,6 +748,110 @@ img {
 
 .proceso__bank-icon--primary svg {
     color: var(--white);
+}
+
+/* Finvi logo icon (reemplaza el escudo) */
+.proceso__bank-icon--finvi {
+    background: var(--white);
+    border: 1.5px solid var(--gray-100);
+    box-shadow: var(--shadow);
+}
+
+.proceso__finvi-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Cable / wire entre iconos */
+.proceso__bank-wire {
+    flex: 1;
+    height: 2px;
+    background: var(--gray-200);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    min-width: 20px;
+}
+
+.proceso__bank-dot {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--secondary);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+/* ── Animaciones Paso 02 ── */
+.proceso__step--02.proc-visible .proceso__bank-icon--side {
+    animation: banco-pulse 2.4s ease-in-out infinite;
+}
+
+.proceso__step--02.proc-visible .proceso__bank-icon--finvi {
+    animation: banco-pulse 2.4s ease-in-out 0.8s infinite;
+}
+
+.proceso__step--02.proc-visible .proceso__bank-icon--mid svg {
+    animation: mid-spin 2.2s linear infinite;
+}
+
+.proceso__step--02.proc-visible .proceso__bank-wire:not(.proceso__bank-wire--rev) .proceso__bank-dot {
+    animation: dot-ltr 1.6s ease-in-out 0.2s infinite;
+}
+
+.proceso__step--02.proc-visible .proceso__bank-wire--rev .proceso__bank-dot {
+    animation: dot-rtl 1.6s ease-in-out 1.0s infinite;
+}
+
+@keyframes banco-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(81, 112, 255, 0); }
+    50%       { box-shadow: 0 0 0 6px rgba(81, 112, 255, 0.14); }
+}
+
+@keyframes mid-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes dot-ltr {
+    0%   { left: 0%;    opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+@keyframes dot-rtl {
+    0%   { left: 100%; opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { left: 0%;   opacity: 0; }
+}
+
+/* ── Animaciones Paso 03 ── */
+.proceso__row--commit,
+.proceso__row--tx {
+    opacity: 0;
+}
+
+.proceso__row--commit {
+    transform: translateX(-14px) scale(0.96);
+    transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.proceso__row--tx {
+    transform: translateX(14px);
+    transition: opacity 0.38s ease, transform 0.38s ease;
+}
+
+.proceso__row--commit.row-visible,
+.proceso__row--tx.row-visible {
+    opacity: 1;
+    transform: none;
 }
 
 .proceso__connect-btn {

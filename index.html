@@ -117,7 +117,7 @@
             <div class="proceso__grid">
 
                 <!-- 01 Tu Compromiso -->
-                <div class="proceso__step" data-animate>
+                <div class="proceso__step proceso__step--01" data-animate>
                     <div class="proceso__step-header">
                         <span class="proceso__num">01</span>
                         <h3 class="proceso__step-title">Tu Compromiso</h3>
@@ -126,7 +126,7 @@
                         <div class="proceso__field">
                             <label>SALARIO MENSUAL</label>
                             <div class="proceso__input">
-                                <span>$ 2.500.000</span>
+                                <span class="proceso__salary">$ 0</span>
                                 <i data-lucide="credit-card"></i>
                             </div>
                         </div>
@@ -140,23 +140,35 @@
                 </div>
 
                 <!-- 02 Conecta tu Banco -->
-                <div class="proceso__step" data-animate>
+                <div class="proceso__step proceso__step--02" data-animate>
                     <div class="proceso__step-header">
                         <span class="proceso__num">02</span>
                         <h3 class="proceso__step-title">Conecta tu Banco</h3>
                     </div>
                     <div class="proceso__card proceso__card--centered">
                         <div class="proceso__bank-icons">
-                            <div class="proceso__bank-icon"><i data-lucide="landmark"></i></div>
-                            <div class="proceso__bank-icon proceso__bank-icon--primary"><i data-lucide="refresh-cw"></i></div>
-                            <div class="proceso__bank-icon"><i data-lucide="shield"></i></div>
+                            <div class="proceso__bank-icon proceso__bank-icon--side">
+                                <i data-lucide="landmark"></i>
+                            </div>
+                            <div class="proceso__bank-wire">
+                                <span class="proceso__bank-dot"></span>
+                            </div>
+                            <div class="proceso__bank-icon proceso__bank-icon--primary proceso__bank-icon--mid">
+                                <i data-lucide="refresh-cw"></i>
+                            </div>
+                            <div class="proceso__bank-wire proceso__bank-wire--rev">
+                                <span class="proceso__bank-dot"></span>
+                            </div>
+                            <div class="proceso__bank-icon proceso__bank-icon--finvi">
+                                <img src="imagnes/logografica.png" alt="FinviAPP" class="proceso__finvi-logo">
+                            </div>
                         </div>
                         <button class="proceso__connect-btn">Conectar Banco</button>
                     </div>
                 </div>
 
                 <!-- 03 Orden Financiero -->
-                <div class="proceso__step" data-animate>
+                <div class="proceso__step proceso__step--03" data-animate>
                     <div class="proceso__step-header">
                         <span class="proceso__num">03</span>
                         <h3 class="proceso__step-title">Orden Financiero</h3>
@@ -166,7 +178,7 @@
                             <span class="proceso__card-label">COMPROMISO MENSUAL</span>
                             <i data-lucide="calendar"></i>
                         </div>
-                        <div class="proceso__row">
+                        <div class="proceso__row proceso__row--commit">
                             <div class="proceso__row-left">
                                 <span class="proceso__check"><i data-lucide="check"></i></span>
                                 <span>Arriendo</span>
@@ -177,21 +189,21 @@
                             <span class="proceso__card-label">GASTOS POR CATEGORÍA</span>
                             <i data-lucide="bar-chart-2"></i>
                         </div>
-                        <div class="proceso__row">
+                        <div class="proceso__row proceso__row--tx proceso__row--tx-1">
                             <div class="proceso__row-left">
                                 <span class="proceso__cat-icon"><i data-lucide="utensils"></i></span>
                                 <span>Alimentación</span>
                             </div>
                             <span class="proceso__amount">-$ 450.000</span>
                         </div>
-                        <div class="proceso__row">
+                        <div class="proceso__row proceso__row--tx proceso__row--tx-2">
                             <div class="proceso__row-left">
                                 <span class="proceso__cat-icon"><i data-lucide="lock"></i></span>
                                 <span>Suscripciones</span>
                             </div>
                             <span class="proceso__amount">-$ 45.000</span>
                         </div>
-                        <div class="proceso__row">
+                        <div class="proceso__row proceso__row--tx proceso__row--tx-3">
                             <div class="proceso__row-left">
                                 <span class="proceso__cat-icon"><i data-lucide="car"></i></span>
                                 <span>Uber</span>
