@@ -203,9 +203,11 @@ img {
 }
 
 .navbar__logo-img {
-    height: 64px;
+    height: 90px;
     width: auto;
     object-fit: contain;
+    transform: scale(1.25);
+    transform-origin: left center;
 }
 
  .navbar__logo-text {
@@ -264,8 +266,8 @@ img {
 
 .navbar__logo-mobile {
     display: none;
-    width: 28px;
-    height: 28px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
 }
 
