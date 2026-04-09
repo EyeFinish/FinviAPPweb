@@ -1071,6 +1071,45 @@ img {
     flex-shrink: 0;
 }
 
+/* Pillars — Compromiso Mensual */
+.mejora__pillars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+}
+
+.mejora__pillar {
+    padding: 8px 16px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    background: var(--gray-50, #fafafa);
+}
+
+.mejora__pillar--result {
+    border-color: var(--primary);
+    background: transparent;
+}
+
+.mejora__pillar--result .mejora__pillar-label {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.mejora__pillar-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    letter-spacing: 0.01em;
+}
+
+.mejora__pillar-sep {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gray-400);
+}
+
 /* ════════════════════════════════════════
    APP CARDS (floating UI cards — no phone frame)
    ════════════════════════════════════════ */
@@ -1632,6 +1671,25 @@ img {
 
     .mejora__content {
         align-items: center;
+        order: -1;
+    }
+
+    .mejora__pillars {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .mejora__pillar {
+        padding: 6px 10px;
+    }
+
+    .mejora__pillar-label {
+        font-size: 0.75rem;
+    }
+
+    .mejora__pillar-sep {
+        font-size: 0.85rem;
     }
 
     .phone-frame {
