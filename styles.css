@@ -1742,12 +1742,13 @@ img {
     .navbar__inner {
         background: var(--white);
         border-radius: 50px;
-        padding: 10px 12px 10px 20px;
+        padding: 10px 16px 10px 20px;
         box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
         gap: 12px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        width: 100%;
     }
 
     /* Show mobile logo, CTA and burger */
