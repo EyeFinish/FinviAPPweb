@@ -49,7 +49,7 @@
                 <span class="navbar__logo-text">FinviAPP</span>
             </a>
             <ul class="navbar__links" id="navLinks">
-                <li><a href="#problema">El Problema</a></li>
+                <li><a href="#como-funciona">Cómo funciona</a></li>
                 <li><a href="#mejora-financiero">Mejora Financiera</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
                 <li><a href="#cta-final">Sala de Espera</a></li>
@@ -107,79 +107,100 @@
     </header>
 
     <!-- ========== PROBLEMA (Pain Points) ========== -->
-    <section class="section section--dark" id="problema">
+    <!-- ========== COMO FUNCIONA ========== -->
+    <section class="section" id="como-funciona">
         <div class="container">
             <div class="section__header">
-                <p class="section__tag"> La verdad incómoda</p>
-                <h2 class="section__title">El 78% de las personas <div> </div><span class="highlight typewriter">no saben en qué gastan su dinero.</span></h2>
-                <div class="pain-tags">
-                    <div class="pain-tag" data-animate>
-                        <i data-lucide="eye-off"></i>
-                        <span>Gastos invisibles</span>
-                    </div>
-                    <div class="pain-tag" data-animate>
-                        <i data-lucide="trending-down"></i>
-                        <span>Vivir al límite</span>
-                    </div>
-                    <div class="pain-tag" data-animate>
-                        <i data-lucide="ban"></i>
-                        <span>Cero ahorro</span>
-                    </div>
-                </div>
+                <p class="section__tag">El proceso</p>
+                <h2 class="section__title">Tu camino hacia la <span class="highlight">libertad</span></h2>
             </div>
-            <div class="problema-layout">
-                <div class="steps-vertical">
-                    <div class="step-v" data-animate>
-                        <div class="step-v__number">01</div>
-                        <div class="step-v__content">
-                            <h3>Conecta tus bancos</h3>
-                            <p>Automatiza tus finanzas</p>
-                        </div>
+            <div class="proceso__grid">
+
+                <!-- 01 Tu Compromiso -->
+                <div class="proceso__step" data-animate>
+                    <div class="proceso__step-header">
+                        <span class="proceso__num">01</span>
+                        <h3 class="proceso__step-title">Tu Compromiso</h3>
                     </div>
-                    <div class="step-v" data-animate>
-                        <div class="step-v__number">02</div>
-                        <div class="step-v__content">
-                            <h3>Mira la verdad</h3>
-                            <p>Entiende dónde va tu dinero</p>
-                           
+                    <div class="proceso__card">
+                        <div class="proceso__field">
+                            <label>SALARIO MENSUAL</label>
+                            <div class="proceso__input">
+                                <span>$ 2.500.000</span>
+                                <i data-lucide="credit-card"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="step-v" data-animate>
-                        <div class="step-v__number">03</div>
-                        <div class="step-v__content">
-                            <h3>Mejora cada día</h3>
-                            <p>Vive mejor con tu dinero</p>
-                            
+                        <div class="proceso__field">
+                            <label>GASTOS FIJOS</label>
+                            <div class="proceso__input proceso__input--empty">
+                                <span>---</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="problema__visual" data-animate>
-                    <div class="bank-graph">
-                        <svg class="bank-graph__lines" viewBox="0 0 400 400" fill="none">
-                            <defs>
-                                <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#5170ff" stop-opacity="0.3" />
-                                    <stop offset="100%" stop-color="#1800ad" stop-opacity="0.6" />
-                                </linearGradient>
-                            </defs>
-                            <line x1="80" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                            <line x1="320" y1="44" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                            <line x1="30" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                            <line x1="370" y1="176" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                            <line x1="100" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                            <line x1="300" y1="368" x2="200" y2="200" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" />
-                        </svg>
-                        <div class="bank-graph__center">
-                            <img src="imagnes/logografica.png" alt="FinviAPP">
+
+                <!-- 02 Conecta tu Banco -->
+                <div class="proceso__step" data-animate>
+                    <div class="proceso__step-header">
+                        <span class="proceso__num">02</span>
+                        <h3 class="proceso__step-title">Conecta tu Banco</h3>
+                    </div>
+                    <div class="proceso__card proceso__card--centered">
+                        <div class="proceso__bank-icons">
+                            <div class="proceso__bank-icon"><i data-lucide="landmark"></i></div>
+                            <div class="proceso__bank-icon proceso__bank-icon--primary"><i data-lucide="refresh-cw"></i></div>
+                            <div class="proceso__bank-icon"><i data-lucide="shield"></i></div>
                         </div>
-                        <div class="bank-graph__node bank-graph__node--1"><img src="imagnes/bancochile.png" alt="Banco de Chile"></div>
-                        <div class="bank-graph__node bank-graph__node--2"><img src="imagnes/bancoestado.png" alt="BancoEstado"></div>
-                        <div class="bank-graph__node bank-graph__node--3"><img src="imagnes/bancoSantander.png" alt="Santander"></div>
-                        <div class="bank-graph__node bank-graph__node--4"><img src="imagnes/bancobci.png" alt="BCI"></div>
-                        <div class="bank-graph__node bank-graph__node--5"><img src="imagnes/bancoScotie.png" alt="Scotiabank"></div>
-                        <div class="bank-graph__node bank-graph__node--6"><img src="imagnes/bancoitauu.png" alt="Itaú"></div>
+                        <button class="proceso__connect-btn">Conectar Banco</button>
                     </div>
                 </div>
+
+                <!-- 03 Orden Financiero -->
+                <div class="proceso__step" data-animate>
+                    <div class="proceso__step-header">
+                        <span class="proceso__num">03</span>
+                        <h3 class="proceso__step-title">Orden Financiero</h3>
+                    </div>
+                    <div class="proceso__card">
+                        <div class="proceso__card-section">
+                            <span class="proceso__card-label">COMPROMISO MENSUAL</span>
+                            <i data-lucide="calendar"></i>
+                        </div>
+                        <div class="proceso__row">
+                            <div class="proceso__row-left">
+                                <span class="proceso__check"><i data-lucide="check"></i></span>
+                                <span>Arriendo</span>
+                            </div>
+                            <span class="proceso__amount">-$ 1.200.000</span>
+                        </div>
+                        <div class="proceso__card-section">
+                            <span class="proceso__card-label">GASTOS POR CATEGORÍA</span>
+                            <i data-lucide="bar-chart-2"></i>
+                        </div>
+                        <div class="proceso__row">
+                            <div class="proceso__row-left">
+                                <span class="proceso__cat-icon"><i data-lucide="utensils"></i></span>
+                                <span>Alimentación</span>
+                            </div>
+                            <span class="proceso__amount">-$ 450.000</span>
+                        </div>
+                        <div class="proceso__row">
+                            <div class="proceso__row-left">
+                                <span class="proceso__cat-icon"><i data-lucide="lock"></i></span>
+                                <span>Suscripciones</span>
+                            </div>
+                            <span class="proceso__amount">-$ 45.000</span>
+                        </div>
+                        <div class="proceso__row">
+                            <div class="proceso__row-left">
+                                <span class="proceso__cat-icon"><i data-lucide="car"></i></span>
+                                <span>Uber</span>
+                            </div>
+                            <span class="proceso__amount">-$ 120.000</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
